@@ -1,0 +1,13 @@
+Git/Linux Commands
+******************
+
+** git diff : to show difference between working area files and staging area files.
+** git diff --staged : to show difference between final area files after commit and staging area files.
+
+** git commit -a -m "<commit_message>" : to commit all latest changes in working directory to final area skipping staging area.
+
+--Moving, Renaming, Untracking a file
+  ***********************************
+** git rm <Filename> 						   : to remove or delete a file from working directory and stage changes simultaneously into staging area.
+** git rm --cached <filename>				   : to untrack any file which is there in staging area.
+** git mv <original_file_name> <new_file_name> : to rename file in working directory and stage changes simultaneously into staging area.
