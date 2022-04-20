@@ -1,13 +1,66 @@
 Git/Linux Commands
 ******************
 
-** git diff : to show difference between working area files and staging area files.
-** git diff --staged : to show difference between final area files after commit and staging area files.
+--Tracking Git project
+ /********************/
+** git status 					: to check status of working directory.
+** git init 					: to create your working area a new git repositoty.
+** git add . 					: to add files in the staging area from working directory.
+** git add --a 					: to add files in the staging area from working directory.
+** git add <Filename> 			: to add a particular file in the staging area from working directory.
+** git commit 					: to commit all the modified changes in staging area to final area and open editor for commit message.
+** git commit -m "<message>" 	: to commit all the modified changes in staging area to final area with commit message.
+** git log 						: to check logs
+** touch <Filename> 			: to create new file in working directory.
 
-** git commit -a -m "<commit_message>" : to commit all latest changes in working directory to final area skipping staging area.
+--Ignore a file in Git
+ /********************/
+** Create a file with name ".gitignore" in working directory.
+** Write name of all the files/directories wants to ignore while adding files to staging area.  
+** But ".gitignore" needs to be moved to staging area.
+** By writing "*.log" in ".gitignore" will ignore all the .log untracked files present in the directory where we are present in git at the moment
+** If any file which is tracked already and now present in staging area, can not be ignored even after adding its name to .gitignore. First we have   to untrack it again and then only it can be ignored.
+
+** git rm --cached <filename> : to untrack any file which is there in staging area.
+
+--Showing changes b/w commit/staging area and working directory
+ /*************************************************************/
+** git diff 							: to show difference between working area files and staging area files.
+** git diff --staged 					: to show difference between final area files after commit and staging area files.
+
+** git commit -a -m "<commit_message>" 	: to commit all latest changes in working directory to final area skipping staging area.
 
 --Moving, Renaming, Untracking a file
-  ***********************************
-** git rm <Filename> 						   : to remove or delete a file from working directory and stage changes simultaneously into staging area.
+ /***********************************/
+** git rm <Filename> 						   : to remove or delete a file (which are already present in staging area) from working directory and
+												 stage changes simultaneously into staging area.
 ** git rm --cached <filename>				   : to untrack any file which is there in staging area.
-** git mv <original_file_name> <new_file_name> : to rename file in working directory and stage changes simultaneously into staging area.
+** git mv <original_file_name> <new_file_name> : to rename file (which are already present in staging area) in working directory and stage changes
+												 simultaneously into staging area.
+				
+--Unstage & unmodify files in Git
+ /*******************************/
+** git restore --staged <filename>  : to unstage file.
+** git checkout -- <filename>		: to remove all new changes in file and matches it with last commited version.
+** git checkout -f 					: to remove all new changes in all the files in working directory and matches the files with their last commited 									  version.
+
+--Creating alias in Git
+ /*********************/
+** git config --global alias.<aliasname> <command>		: to create coomit of single word git command.
+** git config --global alias.<aliasname> '<command>'	: to create coomit of string git command.
+
+--Viewing or changing commits in Git/Linux
+ /****************************************/
+** git log 								: to check logs/ all commits.
+** git log -p							: to check all commits with diff(change).
+** git log -p -n						: to check recent n number of commits with diff(change).
+** git log --stat 						: to check all commits with info of the number of line modified.
+** git log --pretty=oneline				: to check all commits with one line info.
+** git log --pretty=short				: to check all commits with short info (only shows author of file).
+** git log --pretty=full				: to check all commits with full info (shows author and last committed by details).
+** git log --since=2.days 				: to check commits happened in last 2 days.
+** git log --since=2.weeks 				: to check commits happened in last 2 weeks.
+** git log --since=2.months 			: to check commits happened in last 2 months.
+** git log --since=2.years 				: to check commits happened in last 2 years.
+** git log --prettyformat:"%h --%an"	
+** got commit --amend					: to amend previous commits. 
