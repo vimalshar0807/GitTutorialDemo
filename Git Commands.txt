@@ -63,4 +63,22 @@ Git/Linux Commands
 ** git log --since=2.months 			: to check commits happened in last 2 months.
 ** git log --since=2.years 				: to check commits happened in last 2 years.
 ** git log --prettyformat:"%h --%an"	
-** got commit --amend					: to amend previous commits. 
+** git commit --amend					: to amend previous commits. 
+
+--Working with Remote Repositories
+ /********************************/
+** git remote 					: to manage the set of remotes that you are tracking with your local repository. 
+** git remote -v				: to list the current remotes associated with the local repository.
+** git remote add [name] [URL] 	: Add a remote.
+** git remote remove [name] 	: Remove a remote.
+
+** git push -u origin [branch]	: to push a new branch, this creates an upstream tracking branch with a lasting relationship to your local branch.
+** git push --all				: to push all branches
+** git push --tags				: to publish tags that aren't yet in the remote repository
+** git push -f 					: Force a push that would otherwise be blocked, usually because it will delete or overwrite existing commits 
+								 (Use with caution!)
+
+--Creating a branch in Git 
+ /************************/
+** git checkout -b <branchname> : to create a branch in git.
+** git checkout <branchname> 	: to switch between branches. 
