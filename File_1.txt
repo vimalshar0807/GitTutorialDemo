@@ -1,1 +1,2 @@
 This is a new text 1 doc.
+this is branch1 change.
